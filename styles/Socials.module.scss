@@ -1,0 +1,95 @@
+@import '../styles/variables.module.scss';
+@import '../styles/mixin.module.scss';
+
+.container {
+  position: relative;
+  // height: 100vh;
+  width: 100vw;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.main {
+  padding-left: 10vw;
+  padding-right: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  font-size: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  @include m {
+    font-size: 7rem;
+  }
+}
+
+.text {
+  color: white;
+  font-size: 1.8rem;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  @include m {
+    font-size: 3rem;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  @include m {
+    margin: 3rem;
+  }
+
+  &_container {
+    min-width: 80vw;
+
+    @include m {
+      min-width: 35vw;
+    }
+  }
+
+  &_icon {
+    width: 3rem;
+    margin-right: 1.5rem;
+
+    @include m {
+      width: 4rem;
+      margin-right: 2rem;
+    }
+  }
+
+  &_text {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: turquoise;
+    }
+
+    @include m {
+      font-size: 2rem;
+    }
+  }
+}

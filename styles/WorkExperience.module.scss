@@ -1,0 +1,120 @@
+@import '../styles/variables.module.scss';
+@import '../styles/mixin.module.scss';
+
+.container {
+  position: relative;
+  width: 100vw;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  width: 100%;
+}
+
+.main {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  font-size: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  @include m {
+    font-size: 7rem;
+  }
+}
+
+.divider {
+  border: 0.5rem solid turquoise;
+  position: absolute;
+  height: 80%;
+  top: 20rem;
+  left: calc(50vw - 0.25rem);
+  border-radius: 1rem;
+}
+
+.item {
+  border: 0.5rem solid turquoise;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0.5rem 0.5rem gold;
+
+  &_left {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 2vw;
+  }
+
+  &_right {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: -2vw;
+  }
+
+  &_content {
+    padding: 1rem;
+    width: 80vw;
+
+    @include m {
+      padding: 2rem;
+      width: 35vw;
+    }
+  }
+
+  &_title {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include m {
+      font-size: 2rem;
+    }
+  }
+
+  &_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &_text {
+    word-wrap: break-word;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+
+    @include m {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.margin_top {
+  margin-top: 2rem;
+}
+
+.pointer {
+  width: 2.35vw;
+  border: 0.5rem solid turquoise;
+}

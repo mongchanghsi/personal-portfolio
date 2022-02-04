@@ -1,0 +1,137 @@
+@import '../styles/variables.module.scss';
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  &_icon {
+    height: 15vw;
+    width: 15vw;
+  }
+
+  &_1 {
+    transform: rotate(30deg);
+    position: absolute;
+    top: 2vh;
+    left: 5vw;
+  }
+
+  &_2 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: 9vh;
+    left: 20vw;
+  }
+
+  &_3 {
+    transform: rotate(25deg);
+    position: absolute;
+    top: 20vh;
+    left: 85vw;
+  }
+
+  &_4 {
+    transform: rotate(-33deg);
+    position: absolute;
+    top: 30vh;
+    left: 5vw;
+  }
+
+  &_5 {
+    transform: rotate(31deg);
+    position: absolute;
+    top: 80vh;
+    left: 90vw;
+  }
+
+  &_6 {
+    transform: rotate(-31deg);
+    position: absolute;
+    top: 69vh;
+    left: 69vw;
+  }
+
+  &_7 {
+    transform: rotate(-37deg);
+    position: absolute;
+    top: 70vh;
+    left: 15vw;
+  }
+
+  &_8 {
+    transform: rotate(12deg);
+    position: absolute;
+    top: 24vh;
+    left: 51vw;
+  }
+
+  &_9 {
+    transform: rotate(32deg);
+    position: absolute;
+    top: 80vh;
+    left: 50vw;
+  }
+
+  &_10 {
+    transform: rotate(28deg);
+    position: absolute;
+    top: 3vh;
+    left: 41vw;
+  }
+
+  &_11 {
+    transform: rotate(-28deg);
+    position: absolute;
+    top: 41vh;
+    left: 80vw;
+  }
+
+  &_12 {
+    transform: rotate(-29deg);
+    position: absolute;
+    top: 7vh;
+    left: 65vw;
+  }
+
+  &_13 {
+    transform: rotate(21deg);
+    position: absolute;
+    top: 50vh;
+    left: 30vw;
+  }
+
+  &_14 {
+    transform: rotate(7deg);
+    position: absolute;
+    top: 50vh;
+    left: 9vw;
+  }
+
+  &_15 {
+    transform: rotate(-3deg);
+    position: absolute;
+    top: 45vh;
+    left: 56vw;
+  }
+}
+
+@media only screen and (min-width: $screen-m) and (max-width: $screen-l) {
+  .background {
+    &_icon {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-l) {
+  .background {
+    &_icon {
+      height: 15rem;
+      width: 15rem;
+    }
+  }
+}
