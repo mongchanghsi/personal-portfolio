@@ -18,7 +18,11 @@ const FeaturedWorks = () => {
       <div
         key={index}
         className={styles.item}
-        onClick={() => window.open(`${item.url}`, '_blank')}
+        onClick={() => {
+          if (item.url) {
+            window.open(`${item.url}`, '_blank');
+          }
+        }}
       >
         <img
           src={item.image.src}
@@ -79,9 +83,10 @@ const FeaturedWorks = () => {
     <div id='FeaturedWorksContainer' className={styles.container} ref={el}>
       <div className={styles.main}>
         <h2 className={styles.title} id='FeaturedWorksTitle'>
-          Featured Works
+          Featured <span className={styles.highlight}> Works </span>
         </h2>
       </div>
+
       <div className={styles.content} id='FeaturedWorksContent'>
         <div
           className={`${styles.controller} unselectable`}
@@ -93,9 +98,9 @@ const FeaturedWorks = () => {
           <AliceCarousel
             activeIndex={mainIndex}
             animationDuration={800}
+            animationType='fadeout'
             disableDotsControls
             disableButtonsControls
-            infinite
             items={items}
           />
         </div>
