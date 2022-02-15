@@ -2,27 +2,36 @@
 @import '../styles/mixin.module.scss';
 
 .container {
-  position: relative;
-  // height: 100vh;
-  width: 100vw;
-  background-color: black;
+  position: fixed;
+  width: 90vw;
 
-  display: flex;
-  flex-direction: column;
+  bottom: 0;
+
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  z-index: 2;
+  padding: 2rem;
 
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-}
+  display: grid;
 
-.main {
-  padding-left: 10vw;
-  padding-right: 10vw;
+  // grid-template-columns: repeat(3, 1fr);
+  // gap: 1rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    'box1 box1 box2 box2 box3 box3'
+    'empt1 box4 box4 box5 box5 empt2';
+  gap: 1.5rem;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+
+  @include m {
+    width: 50vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 'box1 box2 box3 box4 box5';
+    grid-template-rows: 1fr;
+  }
 }
 
 .title {
@@ -47,49 +56,59 @@
 }
 
 .item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-
-  @include m {
-    margin: 3rem;
-  }
-
   &_container {
-    min-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-    @include m {
-      min-width: 35vw;
-    }
-  }
-
-  &_icon {
-    width: 3rem;
-    margin-right: 1.5rem;
-
-    @include m {
-      width: 4rem;
-      margin-right: 2rem;
-    }
-  }
-
-  &_text {
-    color: white;
-    font-size: 1.5rem;
-    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 5rem;
 
     transition: all 0.4s ease;
+    color: black;
 
-    &:hover {
-      color: turquoise;
+    font-size: 1.3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    box-sizing: border-box;
+
+    border: 0.2rem solid white;
+
+    &:nth-child(1) {
+      grid-area: box1;
     }
 
+    &:nth-child(2) {
+      grid-area: box2;
+    }
+
+    &:nth-child(3) {
+      grid-area: box3;
+    }
+
+    &:nth-child(4) {
+      grid-area: box4;
+    }
+
+    &:nth-child(5) {
+      grid-area: box5;
+    }
+
+    &:hover {
+      background-color: black;
+      color: turquoise;
+
+      border: 0.2rem solid turquoise;
+    }
+
+    width: 10rem;
+
     @include m {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      width: 12rem;
     }
   }
 }
