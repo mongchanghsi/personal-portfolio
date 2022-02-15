@@ -30,12 +30,32 @@ const About = () => {
     <div id='AboutMeContainer' className={styles.container} ref={el}>
       <div className={styles.main}>
         <h2 id='AboutMeTitle' className={styles.title}>
-          About Me
+          About <span className={styles.highlight}> Me </span>
         </h2>
-        <p id='AboutMeContent' className={styles.text}>
-          I am self-taught developer specialising in frontend development with
-          experience in backend development. I am passionate about building
-          front-facing products with the latest technologies such as dApps.
+        <p id='AboutMeContent1' className={styles.text}>
+          I am ex-product designer who became a self-taught developer
+          specialising in frontend development with experience in backend
+          development, blockchain, machine learning and artificial intelligence.
+        </p>
+        <p id='AboutMeContent2' className={styles.text}>
+          Since young, I was a hands-on individual which eventually led me into
+          designing and building hardware product during the first three years
+          of my university. In my last two years, I dabbled into developing and
+          realized the potential for me to develop numerous amazing
+          applications.
+        </p>
+        <p id='AboutMeContent3' className={styles.text}>
+          While my education in my university mainly revolves around hardware
+          development and very minimal courses on programming due to university
+          restrictions, I took the initiative to have majority of my learning
+          through online courses and subsequently took up multiple internships
+          in Software Development to gain knowledge in the professional fields,
+          understanding what are the practices adopted in the companies.
+        </p>
+        <p id='AboutMeContent4' className={styles.text}>
+          I am now seeking full-time or freelance opportunies where I can
+          contribute my skills in coding to help a company to achieve their
+          goals.
         </p>
       </div>
     </div>
