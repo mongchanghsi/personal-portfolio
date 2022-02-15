@@ -37,7 +37,7 @@ const WorkExperience = () => {
     <div id='WorkExperienceContainer' className={styles.container} ref={el}>
       <div className={styles.main}>
         <h2 id='WorkExperienceTitle' className={styles.title}>
-          Work Experience
+          Work <span className={styles.highlight}> Experiences </span>
         </h2>
         <div id='WorkExperienceContent'>
           {isMediumScreen() ? (
@@ -50,7 +50,7 @@ const WorkExperience = () => {
                         <div className={styles.item_content}>
                           <div className={styles.item_header}>
                             <p className={styles.item_title}>
-                              {experience.company}
+                              {experience.title}
                             </p>
                             <p className={styles.item_text}>
                               {experience.date}
@@ -87,18 +87,25 @@ const WorkExperience = () => {
                       }`}
                     >
                       {index % 2 !== 0 && (
-                        <div className={styles.pointer}></div>
+                        <>
+                          <div className={styles.dot}></div>
+
+                          <div className={styles.pointer}></div>
+                        </>
                       )}
                       <div className={styles.item}>
                         <div className={styles.item_content}>
                           <div className={styles.item_header}>
                             <p className={styles.item_title}>
-                              {experience.company}
+                              {experience.title}
                             </p>
                             <p className={styles.item_text}>
                               {experience.date}
                             </p>
                           </div>
+                          <p className={styles.item_text}>
+                            {experience.company}
+                          </p>
                           <div className={styles.item_descContent}>
                             {experience.description.map(
                               (desc, index2: number) => {
@@ -113,7 +120,10 @@ const WorkExperience = () => {
                         </div>
                       </div>
                       {index % 2 === 0 && (
-                        <div className={styles.pointer}></div>
+                        <>
+                          <div className={styles.dot}></div>
+                          <div className={styles.pointer}></div>
+                        </>
                       )}
                     </div>
                   );

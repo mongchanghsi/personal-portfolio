@@ -10,19 +10,28 @@
   flex-direction: column;
   justify-content: center;
 
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+
+  @include m {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
 }
 
 .main {
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 7vw;
+  padding-right: 7vw;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+
+  @include m {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 }
 
 .title {
@@ -33,6 +42,7 @@
 
   @include m {
     font-size: 7rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -117,4 +127,34 @@
 .pointer {
   width: 2.35vw;
   border: 0.5rem solid turquoise;
+}
+
+.dot {
+  border: 0.5rem solid gold;
+  -webkit-border-radius: 30px;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+  left: calc(50% - 1.25rem);
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+.highlight {
+  color: turquoise;
 }
