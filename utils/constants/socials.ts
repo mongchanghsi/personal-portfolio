@@ -26,7 +26,7 @@ const socials = [
     href: 'mailto:m.changhsi@gmail.com',
   },
   {
-    name: 'dApps Portfolio',
+    name: 'dApps',
     icon: NFTIcon,
     href: 'https://linktr.ee/dappsdev',
   },
