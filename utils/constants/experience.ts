@@ -1,10 +1,10 @@
 const experience = [
   {
-    title: 'DBS Bank Limited',
-    company: 'Specialist, Graduate Associate',
+    title: 'Specialist, Graduate Associate',
+    company: 'DBS Bank Limited',
     date: '07/2021 - Present',
     description: [
-      'Developed and maintained internal portals and APIswith C#, Java, Kotlin, Javascript and MySQL',
+      'Developed and maintained internal portals and APIs with C#, Java, Kotlin, Javascript and MySQL',
     ],
     technology: ['Java', 'Kotlin', '.NET', 'MySQL'],
   },
@@ -18,8 +18,8 @@ const experience = [
     technology: ['Javascript', 'Typescript', 'SASS', 'React', 'Web3'],
   },
   {
-    title: 'Affinidi Pte Ltd',
-    company: 'Software Engineer Intern',
+    title: 'Software Engineer Intern',
+    company: 'Affinidi Pte Ltd',
     date: '03/2021 - 05/2021',
     description: [
       'Developed open-source use-cases of Verifiable Credentials (VC) using Affinidi’s API/SDK',
@@ -37,8 +37,8 @@ const experience = [
     ],
   },
   {
-    title: 'Government Technology Agency',
-    company: 'Software Engineer Intern',
+    title: 'Software Engineer Intern',
+    company: 'Government Technology Agency',
     date: '08/2020 - 12/2020',
     description: [
       'Developed reusable components for front-end and wrote test scripts',
@@ -55,8 +55,8 @@ const experience = [
     ],
   },
   {
-    title: 'DBS Bank Limited',
-    company: 'Product Development Intern',
+    title: 'Product Development Intern',
+    company: 'DBS Bank Limited',
     date: '05/2019 - 09/2019',
     description: [
       "Developed an informational webpage on DBS's bereavement process",
