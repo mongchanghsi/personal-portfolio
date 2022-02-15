@@ -9,7 +9,7 @@ import FeaturedWorks from '../components/FeaturedWorks';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.unselectable}`}>
       <Meta />
       <main className={styles.main}>
         <Header />
