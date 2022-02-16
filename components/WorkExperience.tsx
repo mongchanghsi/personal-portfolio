@@ -17,20 +17,60 @@ const WorkExperience = () => {
   }, [windowDimensions]);
 
   useEffect(() => {
-    tl.current = gsap.timeline().from(q('#WorkExperienceTitle'), {
-      autoAlpha: 0,
-      x: '-10',
-      duration: 2,
-    });
-    // .from(
-    //   q('#WorkExperienceContent'),
-    //   {
-    //     autoAlpha: 0,
-    //     x: '-10',
-    //     duration: 1,
-    //   },
-    //   '-=1'
-    // );
+    if (isMediumScreen()) {
+      tl.current = gsap
+        .timeline({
+          scrollTrigger: {
+            start: 'top 80%',
+            end: 'bottom+=300 top',
+            trigger: '#WorkExperienceTitle',
+          },
+        })
+        .from(q('#WorkExperienceTitle'), {
+          autoAlpha: 0,
+          x: '-10',
+          duration: 2,
+        })
+        .from(
+          q('#WorkExperienceMobileContent'),
+          {
+            autoAlpha: 0,
+            x: '-10',
+            duration: 2,
+          },
+          '-=1'
+        );
+    } else {
+      tl.current = gsap
+        .timeline({
+          scrollTrigger: {
+            start: 'top 80%',
+            end: 'bottom+=300 top',
+            trigger: '#WorkExperienceTitle',
+          },
+        })
+        .from(q('#WorkExperienceTitle'), {
+          autoAlpha: 0,
+          x: '-10',
+          duration: 2,
+        });
+      // .from(
+      //   q('#WorkExperienceLeftContent'),
+      //   {
+      //     x: '+50vw',
+      //     duration: 5,
+      //   },
+      //   '-=1'
+      // )
+      // .from(
+      //   q('#WorkExperienceRightContent'),
+      //   {
+      //     x: '-50vw',
+      //     duration: 5,
+      //   },
+      //   '-=6'
+      // );
+    }
   }, []);
 
   return (
@@ -39,99 +79,96 @@ const WorkExperience = () => {
         <h2 id='WorkExperienceTitle' className={styles.title}>
           Work <span className={styles.highlight}> Experiences </span>
         </h2>
-        <div id='WorkExperienceContent'>
-          {isMediumScreen() ? (
-            <>
-              <div className={styles.margin_top}>
-                {experiences.map((experience, index: number) => {
-                  return (
-                    <div key={index}>
-                      <div className={styles.item}>
-                        <div className={styles.item_content}>
-                          <div className={styles.item_header}>
-                            <p className={styles.item_title}>
-                              {experience.title}
-                            </p>
-                            <p className={styles.item_text}>
-                              {experience.date}
-                            </p>
-                          </div>
-                          <div className={styles.item_descContent}>
-                            {experience.description.map(
-                              (desc, index2: number) => {
-                                return (
-                                  <p key={index2} className={styles.item_text}>
-                                    ⤖ {desc}
-                                  </p>
-                                );
-                              }
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className={styles.divider}></div>
-              <div className={styles.margin_top}>
-                {experiences.map((experience, index: number) => {
-                  return (
-                    <div
-                      key={index}
-                      className={`${
-                        index % 2 === 0 ? styles.item_left : styles.item_right
-                      }`}
-                    >
-                      {index % 2 !== 0 && (
-                        <>
-                          <div className={styles.dot}></div>
-
-                          <div className={styles.pointer}></div>
-                        </>
-                      )}
-                      <div className={styles.item}>
-                        <div className={styles.item_content}>
-                          <div className={styles.item_header}>
-                            <p className={styles.item_title}>
-                              {experience.title}
-                            </p>
-                            <p className={styles.item_text}>
-                              {experience.date}
-                            </p>
-                          </div>
-                          <p className={styles.item_text}>
-                            {experience.company}
+        {isMediumScreen() ? (
+          <div id='WorkExperienceMobileContent'>
+            <div className={styles.margin_top}>
+              {experiences.map((experience, index: number) => {
+                return (
+                  <div key={index}>
+                    <div className={styles.item}>
+                      <div className={styles.item_content}>
+                        <div className={styles.item_header}>
+                          <p className={styles.item_title}>
+                            {experience.title}
                           </p>
-                          <div className={styles.item_descContent}>
-                            {experience.description.map(
-                              (desc, index2: number) => {
-                                return (
-                                  <p key={index2} className={styles.item_text}>
-                                    ⤖ {desc}
-                                  </p>
-                                );
-                              }
-                            )}
-                          </div>
+                          <p className={styles.item_text}>{experience.date}</p>
+                        </div>
+                        <div className={styles.item_descContent}>
+                          {experience.description.map(
+                            (desc, index2: number) => {
+                              return (
+                                <p key={index2} className={styles.item_text}>
+                                  ⤖ {desc}
+                                </p>
+                              );
+                            }
+                          )}
                         </div>
                       </div>
-                      {index % 2 === 0 && (
-                        <>
-                          <div className={styles.dot}></div>
-                          <div className={styles.pointer}></div>
-                        </>
-                      )}
                     </div>
-                  );
-                })}
-              </div>
-            </>
-          )}
-        </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className={styles.divider}></div>
+            <div className={styles.margin_top}>
+              {experiences.map((experience, index: number) => {
+                return (
+                  <div
+                    id={
+                      index % 2 === 0
+                        ? 'WorkExperienceLeftContent'
+                        : 'WorkExperienceRightContent'
+                    }
+                    key={index}
+                    className={`${
+                      index % 2 === 0 ? styles.item_left : styles.item_right
+                    }`}
+                  >
+                    {index % 2 !== 0 && (
+                      <>
+                        <div className={styles.dot}></div>
+
+                        <div className={styles.pointer}></div>
+                      </>
+                    )}
+                    <div className={styles.item}>
+                      <div className={styles.item_content}>
+                        <div className={styles.item_header}>
+                          <p className={styles.item_title}>
+                            {experience.title}
+                          </p>
+                          <p className={styles.item_text}>{experience.date}</p>
+                        </div>
+                        <p className={styles.item_text}>{experience.company}</p>
+                        <div className={styles.item_descContent}>
+                          {experience.description.map(
+                            (desc, index2: number) => {
+                              return (
+                                <p key={index2} className={styles.item_text}>
+                                  ⤖ {desc}
+                                </p>
+                              );
+                            }
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    {index % 2 === 0 && (
+                      <>
+                        <div className={styles.dot}></div>
+                        <div className={styles.pointer}></div>
+                      </>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
