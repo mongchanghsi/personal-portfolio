@@ -89,7 +89,13 @@ const FeaturedWorks = () => {
 
   useEffect(() => {
     tl.current = gsap
-      .timeline()
+      .timeline({
+        scrollTrigger: {
+          start: 'top 80%',
+          end: 'bottom+=300 top',
+          trigger: '#FeaturedWorksTitle',
+        },
+      })
       .from(q('#FeaturedWorksTitle'), {
         autoAlpha: 0,
         x: '-10',
@@ -100,7 +106,7 @@ const FeaturedWorks = () => {
         {
           autoAlpha: 0,
           x: '-10',
-          duration: 1,
+          duration: 2,
         },
         '-=1'
       );
