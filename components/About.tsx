@@ -16,6 +16,7 @@ const About = () => {
           start: 'top 80%',
           end: 'bottom+=300 top',
           trigger: '#AboutMeTitle',
+          toggleActions: 'restart none none reset',
         },
       })
       .from(q('#AboutMeTitle'), {

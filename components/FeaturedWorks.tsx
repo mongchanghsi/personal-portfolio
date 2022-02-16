@@ -94,6 +94,7 @@ const FeaturedWorks = () => {
           start: 'top 80%',
           end: 'bottom+=300 top',
           trigger: '#FeaturedWorksTitle',
+          toggleActions: 'restart none none reset',
         },
       })
       .from(q('#FeaturedWorksTitle'), {

@@ -24,6 +24,7 @@ const WorkExperience = () => {
             start: 'top 80%',
             end: 'bottom+=300 top',
             trigger: '#WorkExperienceTitle',
+            toggleActions: 'restart none none reset',
           },
         })
         .from(q('#WorkExperienceTitle'), {
