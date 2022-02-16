@@ -3,7 +3,6 @@
 
 .container {
   position: relative;
-  // min-height: 100vh;
   width: 100vw;
   background-color: black;
 
@@ -55,6 +54,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  &_col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40vh;
+  }
 }
 
 .item {
@@ -83,21 +90,25 @@
   }
 
   &_textContent {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s ease;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    opacity: 1;
     width: 100%;
 
     padding-left: 10%;
     padding-right: 10%;
+
+    @include m {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
   }
 
   &_title {
@@ -117,6 +128,16 @@
 
     @include m {
       font-size: 2rem;
+    }
+  }
+
+  &_small {
+    font-size: 1.3rem;
+    color: white;
+    margin-left: 2rem;
+
+    &:hover {
+      color: turquoise;
     }
   }
 }
