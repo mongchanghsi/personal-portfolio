@@ -21,7 +21,7 @@ const featured = [
   {
     title: 'Open-Source Namecard Website',
     image: NamecardImage,
-    url: 'https://ericmong-namecard.netlify.app/',
+    url: 'https://namecard.ericmong.com/',
     description:
       'An open-source namecard website which displays all your socials, generate a QR code to allow your friends to scan to the same page and to directly save the contract to your phonebook',
   },

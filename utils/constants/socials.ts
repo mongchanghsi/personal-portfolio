@@ -30,6 +30,11 @@ const socials = [
     icon: NFTIcon,
     href: 'https://linktr.ee/dappsdev',
   },
+  {
+    name: 'Namecard',
+    icon: NFTIcon,
+    href: 'https://namecard.ericmong.com/',
+  },
 ];
 
 export default socials;
